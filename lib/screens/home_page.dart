@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:toku_language_learning_app/screens/ColorsPage.dart';
 import 'package:toku_language_learning_app/screens/Family_members_page.dart';
+import 'package:toku_language_learning_app/screens/PharsesPage.dart';
 import '../Components/category_items.dart';
 import 'Numbers_Page.dart';
 
@@ -37,18 +39,37 @@ class home_page extends StatelessWidget {
             ),
             category(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) {
                   return familyMembers();
-                }));
+                },),);
               },
               text: 'FamilyMembers',
               color: Color(0xff528032),
             ),
             category(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return colorsModel();
+                    },),);
+              },
               text: 'Colors',
               color: Color(0xff7d40a2),
             ),
             category(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return pharsesModel();
+                    },),);
+              },
               text: 'Pharses',
               color: Color(0xff47a4ca),
             ),
