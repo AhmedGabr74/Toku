@@ -21,7 +21,7 @@ class Item extends StatelessWidget {
               Number.imagePath!,
             ),
           ),
-          Expanded(child: itemInfo(Number: Number)),
+          Expanded(child: itemInfo(item: Number)),
         ],
       ),
     );
@@ -29,8 +29,8 @@ class Item extends StatelessWidget {
 }
 
 class itemInfo extends StatelessWidget {
-  const itemInfo({super.key, required this.Number});
-  final ItemModel Number;
+  const itemInfo({super.key, required this.item});
+  final ItemModel item;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -42,11 +42,11 @@ class itemInfo extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                Number.japName,
+                item.japName,
                 style: const TextStyle(fontSize: 20, color: Colors.white),
               ),
               Text(
-                Number.engName,
+                item.engName,
                 style: const TextStyle(fontSize: 20, color: Colors.white),
               ),
             ],
@@ -61,7 +61,7 @@ class itemInfo extends StatelessWidget {
               onPressed: () {
                 final player = AudioPlayer();
                 player.play(
-                  AssetSource(Number.sound),
+                  AssetSource(item.sound),
                 );
               },
               icon: const Icon(
@@ -90,7 +90,7 @@ class pharses_item extends StatelessWidget {
     return Container(
       height: 100,
       color: color,
-      child: itemInfo(Number: Number)
+      child: itemInfo(item: Number)
     );
   }
 }
